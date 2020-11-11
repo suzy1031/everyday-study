@@ -1,18 +1,18 @@
 <template>
   <div>
-    <h2>今週の学習時間</h2>
+    <h2>This Week Study Record</h2>
     <h3>11/9~11/15</h3>
     <div class="study-time-circle">
-      <h3 class="study-time-hhmm">10h30m</h3>
+      <h3 class="page-title">10h30m</h3>
     </div>
     <div><font-awesome-icon :icon="['fab', 'twitter-square']"/></div>
-    <!-- formに変更 -->
+    <!-- todo formに変更 -->
     <div class="button-section">
       <button type="submit" class="study-time-button">0:30</button>
       <button type="submit" class="study-time-button">1:00</button>
       <button type="submit" class="study-time-button">1:30</button>
       <button type="submit" class="study-time-button">2:00</button>
-      <!-- <input type="hidden">totalをもたせる -->
+      <!-- todo <input type="hidden">totalをもたせる -->
     </div>
     <!-- ここまで -->
   </div>
@@ -20,7 +20,11 @@
 
 <script>
 export default {
-
+  data() {
+    return {
+      time: ''
+    }
+  }
 }
 </script>
 <style>
@@ -33,11 +37,11 @@ export default {
   text-align:center;
   line-height: 150px;
 }
-h3.study-time-hhmm {
+h3.page-title {
   font-size: 32px;
   color: white;
 }
-.svg-inline--fa {
+.fa-twitter-square {
   font-size: 38px;
   color: rgba(29,161,242,1.00);
 }
@@ -45,7 +49,6 @@ h3.study-time-hhmm {
   width: 300px;
   margin: auto;
   margin-top: 30px;
-  margin-bottom: 153px;
 }
 .study-time-button {
   width: 140px;
@@ -56,8 +59,5 @@ h3.study-time-hhmm {
   padding: 10px;
   border-radius: 4px;
   margin: 5px;
-  border: none;
-  outline: none;
-  appearance: none;
 }
 </style>
