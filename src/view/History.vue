@@ -1,16 +1,21 @@
 <template>
   <div>
-    <h2>Last Week History</h2>
+    <Title :title="title"></Title>
     <ButtonNotFunc></ButtonNotFunc>
   </div>
 </template>
 
 <script>
-import ButtonNotFunc from './ButtonNotFunc';
 
 export default {
   components: {
-    ButtonNotFunc
+    ButtonNotFunc,
+    Title
+  },
+  data() {
+    return {
+      title: "Last Week History"
+    }
   }
 }
 </script>

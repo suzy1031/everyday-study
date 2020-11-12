@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Login</h2>
+    <Title :title="title"></Title>
     <h4>Please Login And enjoy App!!</h4>
     <!-- todo formに変更 -->
     <div class="login-section">
@@ -12,6 +12,16 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      title: "Login"
+    }
+  }
+}
+</script>
 <style>
 .login-section {
   position: absolute;
