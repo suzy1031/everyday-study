@@ -11,7 +11,7 @@
   height: 60px;
   line-height: 60px;
   background: #0066FF;
-  border-radius: 4px;
+  border-radius: .5em;
   position: absolute;
 	top: 50%;
 	left: 50%;
