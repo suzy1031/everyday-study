@@ -8,13 +8,17 @@
     <div><font-awesome-icon :icon="['fab', 'twitter-square']"/></div>
     <!-- todo formに変更 -->
     <div class="button-section">
-      <button type="submit" class="study-time-button" @click="postStudyTime">
-        0:30
-        <input type="hidden" v-model="time">
-      </button>
-      <button type="submit" class="study-time-button">1:00</button>
-      <button type="submit" class="study-time-button">1:30</button>
-      <button type="submit" class="study-time-button">2:00</button>
+      <form>
+        <div class="custom-select">
+          <label for="select-choice1" class="label select-1"><span class="selection-choice">select study time</span></label>
+          <select v-model="time" id="time" class="select">
+            <option v-for="option in options" v-bind:value="option.value" :key="option.value">
+              {{ option.text }}
+            </option>
+          </select>
+        </div>
+        <button type="submit" class="study-time-button" @click="postStudyTime">register</button>
+      </form>
       <!-- todo <input type="hidden">totalをもたせる -->
     </div>
     <!-- ここまで -->
@@ -23,13 +27,21 @@
 
 <script>
 import axios from 'axios';
+import Title from '../components/Title';
 
 export default {
   components: {
+    Title
   },
   data() {
     return {
-      time: 0.5,
+      time:'0.5',
+      options: [
+        { text: '0:30', value: '0.5'},
+        { text: '1:00', value: '1'},
+        { text: '1:30', value: '1.5'},
+        { text: '2:00', value: '2'}
+      ],
       title: 'This Week Study Record'
     }
   },
@@ -98,13 +110,53 @@ h3.page-title {
   margin-top: 30px;
 }
 .study-time-button {
-  width: 140px;
+  width: 160px;
   background: #0066FF;
   color: white;
   font-size: 18px;
   font-weight: bold;
-  padding: 10px;
-  border-radius: 4px;
-  margin: 5px;
+  padding: .9em;
+  border-radius: .5em;
+  margin-top: 10px;
 }
+/* セレクトボックスレイアウト */
+.custom-select {
+  position : relative;
+  width: 100%;
+  margin: 20px auto;
+  cursor: pointer;
+}
+.select, .label {
+  display: block;
+}
+.select {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  opacity: 0;
+}
+.selection-choice {
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+}
+.label {
+  position: relative;
+  padding: 0.9em;
+  border-radius: .5em;
+  cursor: pointer;
+  color: white;
+}
+.label::after {
+  content: "▼";
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 1em;
+  border-left: 1px solid white;
+}
+.select-1 {
+  background: #0066FF;
+}
+/* ここまで */
 </style>
