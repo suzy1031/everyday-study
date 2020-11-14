@@ -6,6 +6,8 @@
 </template>
 
 <script>
+import ButtonNotFunc from '../components/ButtonNotFunc';
+import Title from '../components/Title';
 
 export default {
   components: {
