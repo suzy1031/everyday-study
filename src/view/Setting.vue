@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Settings</h2>
+    <Title :title="title"></Title>
     <!-- todo vuex使ってログアウトする処理 -->
     <router-link to="/login">
       <button type="submit" class="study-time-button logout">Logout</button>
@@ -8,6 +8,20 @@
   </div>
 </template>
 
+<script>
+import Title from '../components/Title';
+
+export default {
+  components: {
+    Title
+  },
+  data() {
+    return {
+      title: "Settings"
+    }
+  }
+}
+</script>
 <style>
 .logout {
   position: absolute;

@@ -1,17 +1,31 @@
 <template>
   <div>
-    <h2>Sign Up</h2>
+    <Title :title="title"></Title>
     <h4>Please Sign Up And enjoy App!!</h4>
     <!-- todo formに変更 -->
     <div class="login-section">
-      <label for="email">Email</label>
+      <label for="email" class="form-label">Email</label>
       <input id="email" type="email">
-      <label for="password">Password</label>
+      <label for="password" class="form-label">Password</label>
       <input id="password" type="password">
-      <router-link to="/login" class="signup-path">Sign Up</router-link>
+      <router-link to="/login" class="signup-path">Login</router-link>
     </div>
   </div>
 </template>
+<script>
+import Title from '../components/Title';
+
+export default {
+  components: {
+    Title
+  },
+  data() {
+    return {
+      title: "Sign Up"
+    }
+  }
+}
+</script>
 <style>
 .login-section {
   position: absolute;
