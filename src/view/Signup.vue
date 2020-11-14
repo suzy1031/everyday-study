@@ -4,9 +4,9 @@
     <h4>Please Sign Up And enjoy App!!</h4>
     <!-- todo formに変更 -->
     <div class="login-section">
-      <label for="email">Email</label>
+      <label for="email" class="form-label">Email</label>
       <input id="email" type="email">
-      <label for="password">Password</label>
+      <label for="password" class="form-label">Password</label>
       <input id="password" type="password">
       <router-link to="/login" class="signup-path">Login</router-link>
     </div>

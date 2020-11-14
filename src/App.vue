@@ -66,12 +66,6 @@ button {
   outline: none;
   appearance: none;
 }
-label {
-  color: white;
-  font-size: 24px;
-  font-weight: bold;
-  margin: 5px 0;
-}
 input {
   width: 250px;
   height: 35px;

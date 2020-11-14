@@ -4,9 +4,9 @@
     <h4>Please Login And enjoy App!!</h4>
     <!-- todo formに変更 -->
     <div class="login-section">
-      <label for="email">Email</label>
+      <label for="email" class="form-label">Email</label>
       <input id="email" type="email">
-      <label for="password">Password</label>
+      <label for="password" class="form-label">Password</label>
       <input id="password" type="password">
       <router-link to="/signup" class="signup-path">Sign Up</router-link>
     </div>
@@ -39,6 +39,12 @@ export default {
 	transform: translate(-50%, -50%);
   display:flex;
   flex-flow: column;
+}
+.form-label {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 5px 0;
 }
 .signup-path {
   margin: 10px;
